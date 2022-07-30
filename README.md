@@ -4,7 +4,7 @@
 
 - 🌱 I’m currently learning **Reinforcement Learning and Tensorflow**
 
-- 💬 Ask me about **CS-Topics, Web Development and Machine Learning**
+- 💬 Ask me about **CS-Topics, Fullstack-Development and Machine Learning**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
