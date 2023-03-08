@@ -2,7 +2,7 @@
 <h3 align="center">An aspiring Computer Scientist from Germany</h3>
 
 
-- 🌱 I’m currently learning **React Native**
+- 🌱 I’m currently interning as Data Analyst at Tesla
 
 
 <h3 align="left">Connect with me:</h3>
