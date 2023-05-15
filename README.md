@@ -1,5 +1,5 @@
 # 💫 About Me
-🔭 I’m currently interning as Data Analyst / Engineer @Tesla
+I’m currently interning as Data Analyst / Engineer @Tesla
 
 
 ## 🌐 Socials
