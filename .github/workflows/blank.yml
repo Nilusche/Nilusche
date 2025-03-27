@@ -2,8 +2,8 @@ name: Lol
 
 on:
   schedule:
-    - cron: '0 10 * * *'  # Runs daily at 10:00 UTC
-  workflow_dispatch:      # Allow manual trigger
+    - cron: '0 2 * * *'  # Daily at 10:00 UTC
+  workflow_dispatch:
 
 jobs:
   commit-streak:
@@ -17,13 +17,19 @@ jobs:
           git config user.name "Green Graph Bot"
           git config user.email "bot@example.com"
 
-      - name: Generate random commits
+      - name: Generate commits (and Sunday cleanup)
         run: |
+          DAY=$(date +%u)  # 7 = Sunday
+          if [ "$DAY" -eq 7 ]; then
+            echo "Sunday cleanup: clearing streak.txt"
+            > streak.txt
+          fi
+
           N=$(( (RANDOM % 5) + 1 ))  # 1 to 5 commits
           echo "Generating $N commits"
           for i in $(seq 1 $N); do
             echo "$RANDOM" >> streak.txt
-            git add streak.txt
+            git add -f streak.txt
             git commit -m "Green commit $i on $(date)"
           done
 
