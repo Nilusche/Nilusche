@@ -1,0 +1,31 @@
+name: Lol
+
+on:
+  schedule:
+    - cron: '0 10 * * *'  # Runs daily at 10:00 UTC
+  workflow_dispatch:      # Allow manual trigger
+
+jobs:
+  commit-streak:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Git
+        run: |
+          git config user.name "Green Graph Bot"
+          git config user.email "bot@example.com"
+
+      - name: Generate random commits
+        run: |
+          N=$(( (RANDOM % 5) + 1 ))  # 1 to 5 commits
+          echo "Generating $N commits"
+          for i in $(seq 1 $N); do
+            echo "$RANDOM" >> streak.txt
+            git add streak.txt
+            git commit -m "Green commit $i on $(date)"
+          done
+
+      - name: Push commits
+        run: git push origin main
